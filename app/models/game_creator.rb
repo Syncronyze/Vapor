@@ -1,0 +1,2 @@
+class GameCreator < ApplicationRecord
+end
