@@ -1,6 +1,6 @@
 class Game < ApplicationRecord
-	has_many :game_publishers
-	has_many :game_developers
+	# has_many :game_publishers, dependent: :destroy
+	# has_many :game_developers, dependent: :destroy
 	#has_many :game_creators
 
 	# has_many :owned_games, dependent: :destroy

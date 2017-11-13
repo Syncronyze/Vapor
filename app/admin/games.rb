@@ -1,7 +1,7 @@
 ActiveAdmin.register Game do
   config.sort_order = 'title_asc'
 
-  permit_params :name, :description, :price, :discount, :release_date, :developer_id, :publisher_id, genre_ids: []
+  permit_params :name, :description, :price, :discount, :release_date, genre_ids: []
 
   index do
   	selectable_column
@@ -11,8 +11,8 @@ ActiveAdmin.register Game do
   	column :price
   	column :discount
   	column :release_date
-  	# column :developer
-  	# column :publisher
+  	# column :game_developer
+  	# column :game_publisher
   	actions
   end
 
@@ -23,8 +23,8 @@ ActiveAdmin.register Game do
 	  		form.input :price
 	  		form.input :discount
 	  		form.input :release_date
-	  		# form.input :developer
-	  		# form.input :publisher
+	  		# form.input :game_developer
+	  		# form.input :game_publisher
 	  		form.input :genre_ids, label: 'Genre(s)', as: :check_boxes, collection: Genre.all
 		end
 		form.actions
