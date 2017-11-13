@@ -1,4 +1,4 @@
 class OrderItem < ApplicationRecord
-	belongs_to :order
-	belongs_to :game
+	#belongs_to :order
+	#belongs_to :game
 end
