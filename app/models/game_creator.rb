@@ -1,4 +1,4 @@
 class GameCreator < ApplicationRecord
-	belongs_to :accounts
-	has_one :games
+	belongs_to :account
+	belongs_to :game
 end

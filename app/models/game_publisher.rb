@@ -1,4 +1,4 @@
 class GamePublisher < ApplicationRecord
-	belongs_to :companies
-	belongs_to :games
+	belongs_to :company
+	belongs_to :game
 end

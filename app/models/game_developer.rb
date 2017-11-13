@@ -1,4 +1,4 @@
 class GameDeveloper < ApplicationRecord
-	belongs_to :games
-	belongs_to :companies
+	belongs_to :game
+	belongs_to :company
 end
