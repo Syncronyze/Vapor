@@ -65,16 +65,22 @@ ActiveRecord::Schema.define(version: 20171113195022) do
   end
 
   create_table "game_developers", force: :cascade do |t|
+    t.integer "game_id"
+    t.integer "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "game_genres", force: :cascade do |t|
+    t.integer "game_id"
+    t.integer "genre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "game_publishers", force: :cascade do |t|
+    t.integer "game_id"
+    t.integer "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
