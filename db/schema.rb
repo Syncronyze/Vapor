@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20171113195022) do
     t.text "description"
     t.decimal "price"
     t.datetime "release_date"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "discount"

@@ -1,7 +1,7 @@
 ActiveAdmin.register Game do
   config.sort_order = 'title_asc'
 
-  permit_params :name, :description, :price, :discount, :release_date, genre_ids: []
+  permit_params :name, :description, :price, :discount, :image, :release_date, genre_ids: []
 
   index do
   	selectable_column
@@ -16,8 +16,9 @@ ActiveAdmin.register Game do
   	actions
   end
 
-  form do |form|
+  form :html => { :multipart => true } do |form|
   	form.inputs do
+        form.input :image, as: :file, hint: image_tag(form.object.image)
 	  		form.input :name
 	  		form.input :description
 	  		form.input :price
