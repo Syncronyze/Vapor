@@ -13,6 +13,7 @@ class Game < ApplicationRecord
 	has_many :genres, through: :game_genres
 
 	validates :name, :price, :release_date, presence: true
+	validates :name, uniqueness: true
 	
 	mount_uploader :image, ImageUploader
 
