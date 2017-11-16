@@ -1,0 +1,46 @@
+.navbar{
+	.navbar-nav{
+		display: inline-block;
+		float: none;
+		vertical-align: middle;
+		li{
+			a{
+				text-transform: uppercase;
+				text-decoration: none;
+				color: white;
+				font-family: 'Montserrat', sans-serif;
+				font-style:oblique;
+
+			}
+		}
+	}
+	.navbar-collapse {
+  		text-align: center;
+	}
+
+	border: none;
+	border-bottom: 2px solid #20ABA8;
+	background-color: rgba(94, 16, 76, 0.4);
+	border-radius: 0;
+	min-height: 104px;
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		border-bottom:2px solid #ED1B64;
+		width: 100%;
+		padding: 0;
+		min-height: 10%;
+		top: calc(90% - 4px);
+		z-index: 10;
+	}
+
+	.icon{
+		border:none;
+		margin:0;
+		padding:0;
+		&:hover{
+			background:none;
+		}
+	}
+}

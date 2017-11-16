@@ -1,2 +1,11 @@
 = link_to game_path(game) do
-	= image_tag(game.image, :alt => game.name)
+	.gameinfo
+		.gameimg.inline
+			= image_tag(game.image, :alt => game.name, :class => "gameimage")
+		.gamename.inline
+			= game.name
+		.gamerelease.inline
+			= game.release_date.strftime "%b %-d, %Y"
+		.gameprice.inline
+			|CDN$ 
+			= game.price

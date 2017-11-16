@@ -10,6 +10,8 @@ html
   	nav.navbar.navbar-default role="navigation" 
   		.container
 		  .navbar-header
+		  	.hidden-sm.hidden-md.hidden-lg.hidden-xl
+		  		= image_tag image_url("icon.png")
 		    button.navbar-toggle data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button" 
 		      span.sr-only Toggle navigation
 		      span.icon-bar
@@ -17,29 +19,16 @@ html
 		      span.icon-bar
 		  .collapse.navbar-collapse.navbar-ex1-collapse
 		    ul.nav.navbar-nav
+		      li.navbar-toggle.hidden-xs.icon
+		      	= image_tag image_url("icon.png")
+		      li
+		        = link_to games_path
+		        	| games
 		      li
 		        a href="#"  Link
 		      li
 		        a href="#"  Link
 		      li
 		        a href="#"  Link
-		      li
-		        a href="#"  Link
-		      li.dropdown
-		        a.dropdown-toggle data-toggle="dropdown" href="#" 
-		          | Dropdown
-		          b.caret
-		        ul.dropdown-menu
-		          li
-		            a href="#"  Action
-		          li
-		            a href="#"  Another action
-		          li
-		            a href="#"  Something else here
-		          li
-		            a href="#"  Separated link
-		          li
-		            a href="#"  One more separated link
-
 
     = yield
