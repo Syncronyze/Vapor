@@ -1,17 +1,8 @@
 .content
-	.search.col-sm-8.col-sm-2.col-md.4.col-md-offset-3
+	.search.col-sm-8.col-sm-2.col-md-6.col-md-offset-3
 		.games
 			ul
 				= render partial: 'game', collection: @games
-		.searchitems.hidden-sm.hidden-xs
-			ul
-				li
-					| tag1
-				li
-					| tag1
-				li
-					| tag1
-				li
-					| tag1
-				
-
+	.genres.col-sm-2
+		ul
+			= render partial: 'genre', collection: @genres
