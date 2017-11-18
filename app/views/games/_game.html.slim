@@ -1,14 +1,14 @@
 li.col-xs-12
 	= link_to game_path(game)
-			.gameinfo.col-xs-12
-				.gameimg.inline.col-xs-2
-					= image_tag(game.image, :alt => game.name, :class => "gameimage")
-				.gamename.inline.col-xs-4
-					= game.name
-				.gamerelease.inline.col-xs-3
-					= game.release_date.strftime "%b %-d, %Y"
-				.gameprice.inline.col-xs-3
-					|CDN$ 
-					= game.price
+		.gameinfo.col-xs-12
+			.gameimg.inline.col-xs-2
+				= image_tag(game.image, :alt => game.name, :class => "gameimage")
+			.gamename.inline.col-xs-4
+				= game.name
+			.gamerelease.inline.col-xs-3
+				= game.release_date.strftime "%b %-d, %Y"
+			.gameprice.inline.col-xs-3
+				|CDN$ 
+				= game.price
 		
 	

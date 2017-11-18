@@ -1,56 +1,124 @@
-.games{
-	width:100%;
-	display:inline-block;
-	font-family: 'Roboto', sans-serif;
-	font-size: 12px;
-	ul{
-		list-style: none;
-		li{
-			.inline{
-				display:inline-block;
-			}
+.searchresults{
+	min-width: 750px;
 
-			.gameinfo{
-				background-color: rgba(94, 16, 76, 0.2);
-				border-radius:4px;
-				border: 1px solid rgba(32, 171, 168, 0.1);
-				margin: 5px;
-				padding:0;
-				color:rgba(255, 255, 255, 0.6);
+	form{
+		width:350px;
+		float:right;
+	}
 
-				.gameimg{
-					img{
-						height: 45px;
-						float:left;
+	.games{
+		width:100%;
+		display:inline-block;
+		font-family: 'Roboto', sans-serif;
+		font-size: 12px;
+		ul#itemlist{
+			list-style: none;
+			li{
+				#loading-spinner{
+					height:50px;
+					display:block;
+					margin:auto;
+				}
+
+				.inline{
+					display:inline-block;
+				}
+
+				.gameinfo{
+					background-color: rgba(94, 16, 76, 0.2);
+					border-radius:4px;
+					border: 1px solid rgba(32, 171, 168, 0.1);
+					margin: 5px;
+					padding:0;
+					color:rgba(255, 255, 255, 0.6);
+
+					.gameimg{
+						img{
+							height: 45px;
+							float:left;
+						}
+					}
+
+					.gamename{
+						padding:5px;
+						text-align:left;
+						vertical-align: top;
+					}
+
+					.gamerelease{
+						text-align:left;
+						vertical-align: middle;
+						
+					}
+
+					.gameprice{
+						text-align:right;
+						padding-right:5px;
+					}
+
+					&:hover{
+						background-color: rgba(94, 16, 76, 0.3);
 					}
 				}
-
-				.gamename{
-					padding:5px;
-					text-align:left;
-					vertical-align: top;
-				}
-
-				.gamerelease{
-					text-align:left;
-					vertical-align: middle;
-					
-				}
-
-				.gameprice{
-					text-align:right;
-					padding-right:5px;
-				}
-
-				&:hover{
-					background-color: rgba(94, 16, 76, 0.3);
-				}
 			}
+
+		}
+	}
+}
+.genres{
+	form{
+		color:white;
+		input[type=checkbox]{
+			height: 0;
+			width: 0;
+			visibility: hidden;
+		}
+		input[type=checkbox]{
+			height: 0;
+			width: 0;
+			visibility: hidden;
+		}
+
+		label {
+			cursor: pointer;
+			text-indent: 30px;
+			white-space:nowrap;
+			width: 20px;
+			height: 10px;
+			background: grey;
+			display: block;
+			border-radius: 100px;
+			position: relative;
+		}
+
+		label:after {
+			content: '';
+			position: absolute;
+			top:0;
+			left:0;
+			width: 10px;
+			height: 10px;
+			background: #fff;
+			border-radius: 90px;
+			transition: 0.3s;
+		}
+
+		input:checked + label {
+			background: #ED1B64;
+		}
+
+		input:checked + label:after {
+			left: calc(100%);
+			transform: translateX(-100%);
+		}
+
+		label:active:after {
+			width: 10px;
 		}
 
 	}
 }
 
-.genres{
-
+.clear{
+	clear:both;
 }

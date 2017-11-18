@@ -13,12 +13,12 @@ class GamesController < ApplicationController
 		query = Game.all
 
 		if(!genres.empty?)
-			query = query.joins(:genres).where( genres: { id: params[:genre_search][:genre_ids] })
+			query = query.joins(:genres).where( genres: { id: params[:genre_search][:genre_ids] }).group(:name)
 		end
 
-		
 
-		@games = query
+
+		@games = query.order(:name)
 
 		respond_to do |format|
 			format.js
