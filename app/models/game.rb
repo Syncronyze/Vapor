@@ -17,4 +17,16 @@ class Game < ApplicationRecord
 	
 	mount_uploader :image, ImageUploader
 
+	def self.with_all_genres(genre_ids)
+		if genre_ids.empty?
+			return Game.all
+		end
+
+		select(:id).distinct.
+		joins(:genres).
+		where('genres.id' => genre_ids).
+		group(:id).
+		having('count(genres.id) = ?', genre_ids.length)
+	end
+
 end

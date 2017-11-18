@@ -1,8 +1,12 @@
 .content
+	= form_tag('/search', remote: true) do
+	  = text_field_tag :search, params[:search]
+	  = submit_tag "Search", :name => nil
 	.search.col-sm-8.col-sm-2.col-md-6.col-md-offset-3
 		.games
-			ul
-				= render partial: 'game', collection: @games
+			ul#itemlist
+				= render @games
 	.genres.col-sm-2
-		ul
-			= render partial: 'genre', collection: @genres
+		= form_tag('/fetch_items', :id => "genre_list", remote: true) do
+				= collection_check_boxes :genre_search, :genre_ids, Genre.all, :id, :name
+				= submit_tag "Search", :name => nil
