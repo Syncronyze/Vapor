@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get '/', to: "games#index", as: 'index'
   get 'games', to: 'games#index', as: 'games'
   get 'game/:id', to: 'games#view', as: 'game'
-  post '/fetch_items' => 'games#by_genre', as: 'fetch_items'
+  post '/fetch_items' => 'games#search_games', as: 'fetch_items'
 
 end

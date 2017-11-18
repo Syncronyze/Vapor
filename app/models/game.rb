@@ -16,17 +16,4 @@ class Game < ApplicationRecord
 	validates :name, uniqueness: true
 	
 	mount_uploader :image, ImageUploader
-
-	def self.with_all_genres(genre_ids)
-		if genre_ids.empty?
-			return Game.all
-		end
-
-
-		where = genre_ids.map do |id| id = "genres.id = #{id} AND " end
-
-		self.
-	   	joins(:genres).
-	    where(where[0..(where.length - 5)])
-	end
 end

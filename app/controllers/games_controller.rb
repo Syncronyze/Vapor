@@ -8,10 +8,18 @@ class GamesController < ApplicationController
 		@game = Game.find(params[:id])
 	end
 
-	def by_genre
+	def search_games
 		genres = params[:genre_search][:genre_ids].delete_if { |x| x.empty? }
-		@games = Game.where(id: Game.with_all_genres(genres))
-		#@games = Game.all.joins(:genres).where( genres: { id: params[:genre_search][:genre_ids] })
+		query = Game.all
+
+		if(!genres.empty?)
+			query = query.joins(:genres).where( genres: { id: params[:genre_search][:genre_ids] })
+		end
+
+		
+
+		@games = query
+
 		respond_to do |format|
 			format.js
 		end
