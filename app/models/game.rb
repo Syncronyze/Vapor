@@ -22,11 +22,11 @@ class Game < ApplicationRecord
 			return Game.all
 		end
 
-		select(:id).distinct.
-		joins(:genres).
-		where('genres.id' => genre_ids).
-		group(:id).
-		having('count(genres.id) = ?', genre_ids.length)
-	end
 
+		where = genre_ids.map do |id| id = "genres.id = #{id} AND " end
+
+		self.
+	   	joins(:genres).
+	    where(where[0..(where.length - 5)])
+	end
 end
