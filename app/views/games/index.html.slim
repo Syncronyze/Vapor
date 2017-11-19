@@ -6,9 +6,10 @@
 		.games
 			ul#itemlist
 				= render(@games) || render('empty')
-	.genres.col-sm-2
+	aside.genres.col-sm-2
 		= form_tag('/fetch_items', :id => "genre_list", remote: true) do
 				= collection_check_boxes :genre_search, :genre_ids, Genre.all, :id, :name
 				= submit_tag "Search", :name => nil, :style => "display: none;", :id => "btn_genre_search"
 
 	.clear
+cd
