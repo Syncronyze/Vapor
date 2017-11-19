@@ -16,4 +16,13 @@ class Game < ApplicationRecord
 	validates :name, uniqueness: true
 	
 	mount_uploader :image, ImageUploader
+
+	def self.with_genres(genre_ids)
+		game_ids = genre_ids
+					.map { |id| Game.joins(:genres).where('genres.id' => id) }
+					.map { |relation| relation.pluck(:id).to_set }
+					.inject(:intersection).to_a
+
+		where(id: game_ids)
+	end
 end

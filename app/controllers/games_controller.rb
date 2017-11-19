@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
 	def index
-		@games = Game.all
+		@games = Game.all.order(:name)
 		@genres = Genre.all
 	end
 
@@ -10,15 +10,12 @@ class GamesController < ApplicationController
 
 	def search_games
 		genres = params[:genre_search][:genre_ids].delete_if { |x| x.empty? }
-		query = Game.all
-
-		if(!genres.empty?)
-			query = query.joins(:genres).where( genres: { id: params[:genre_search][:genre_ids] }).group(:name)
-		end
-
-
-
-		@games = query.order(:name)
+		@games = Game.with_genres(genres)
+		# if(!genres.empty?)
+		# 	@games = Game.with_genres(genres)
+		# else
+		# 	@games = Game.all
+		# end
 
 		respond_to do |format|
 			format.js
