@@ -1,1 +1,4 @@
 $("#itemlist").html("<%= j render @games %>");
+
+if($("#itemlist li").length == 0)
+	$("#itemlist").html("<%= j render partial: 'empty' %>");

@@ -17,12 +17,22 @@ class Game < ApplicationRecord
 	
 	mount_uploader :image, ImageUploader
 
-	def self.with_genres(genre_ids)
-		game_ids = genre_ids
-					.map { |id| Game.joins(:genres).where('genres.id' => id) }
-					.map { |relation| relation.pluck(:id).to_set }
-					.inject(:intersection).to_a
+	def self.with_genres(genre_ids, searchterm)
+		games = Game.all
 
-		where(id: game_ids)
+		if(!genre_ids.empty?)
+			game_ids = genre_ids
+						.map { |id| Game.joins(:genres).where('genres.id' => id) }
+						.map { |relation| relation.pluck(:id).to_set }
+						.inject(:intersection).to_a
+
+			games = where(id: game_ids)
+		end
+
+		if(!searchterm.nil?)
+			games.where('name LIKE ? OR description LIKE ?', "%#{searchterm}%", "%#{searchterm}%").order(:name)
+		else
+			games.order(:name)
+		end
 	end
 end

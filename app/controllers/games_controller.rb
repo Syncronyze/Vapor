@@ -10,11 +10,8 @@ class GamesController < ApplicationController
 
 	def search_games
 		genres = params[:genre_search][:genre_ids].delete_if { |x| x.empty? }
-		if(!genres.empty?)
-			@games = Game.with_genres(genres)
-		else
-			@games = Game.all
-		end
+		searchterm = params[:hidden_search_box]
+		@games = Game.with_genres(genres, searchterm.strip)
 
 		respond_to do |format|
 			format.js

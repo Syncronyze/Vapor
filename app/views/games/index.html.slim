@@ -1,14 +1,16 @@
 .content
-	.searchresults.col-sm-8.col-sm-2.col-md-6.col-md-offset-3
+	section.searchresults.col-sm-8.col-sm-2.col-md-6.col-md-offset-3
 		= form_tag('nil', remote: true) do
-		  = text_field_tag :search, params[:search]
-		  = submit_tag "Search", :name => nil, :id => "btn_name_search"
+			= text_field_tag :search, params[:search]
+			= submit_tag "Search", :name => nil, :id => "btn_name_search"
+			.border-bottom
 		.games
 			ul#itemlist
-				= render(@games) || render('empty')
+				= render(@games)
 	aside.genres.col-sm-2
 		= form_tag('/fetch_items', :id => "genre_list", remote: true) do
 				= collection_check_boxes :genre_search, :genre_ids, Genre.all, :id, :name
+				= text_field_tag 'hidden_search_box', nil, :style => "display: none;"
 				= submit_tag "Search", :name => nil, :style => "display: none;", :id => "btn_genre_search"
 
 	.clear

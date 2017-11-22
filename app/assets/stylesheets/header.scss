@@ -1,3 +1,5 @@
+$accent-pink: #ED1B64;
+$accent-blue: #20ABA8;
 .navbar{
 	.navbar-nav{
 		display: inline-block;
@@ -6,12 +8,13 @@
 		li{
 			a{
 				text-transform: uppercase;
+				letter-spacing: 8px;
 				text-decoration: none;
 				color: white;
 				font-family: 'Montserrat', sans-serif;
 				font-style:oblique;
 				&:hover{
-					color:rgba(255, 255, 255, 0.4);;
+					color:$accent-pink;
 				}
 			}
 		}
@@ -39,7 +42,7 @@
 		content: "";
 		display: block;
 		position: absolute;
-		border-bottom:2px solid #ED1B64;
+		border-bottom:2px solid $accent-pink;
 		width: 100%;
 		padding: 0;
 		min-height: 10%;

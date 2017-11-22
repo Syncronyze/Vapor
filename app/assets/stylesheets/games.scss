@@ -1,17 +1,64 @@
+$accent-pink: #ED1B64;
+$accent-blue: #20ABA8;
 .searchresults{
 	min-width: 750px;
 
 	form{
 		width:350px;
 		float:right;
+		.border-bottom{
+			vertical-align: top;
+			width: calc(80% - 22px);
+			border-bottom: 1px solid $accent-blue;
+			padding:0;
+			margin:0;
+			padding-bottom:2px;
+			display:inline-block;
+			
+		}
+
+		input[type=text]{
+			color:white;
+			background: none;
+			border:none;
+			border-bottom: 1px solid $accent-pink;
+			border-radius: 0px;
+			background:rgba(255, 255, 255, 0.01);
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+			&:focus{
+				background:rgba(255, 255, 255, 0.02);
+				box-shadow: none;
+			}
+		}
+
+		#btn_name_search{
+			background:none;
+			border:none;
+			box-shadow: none;
+			&:hover{
+				color:$accent-pink;
+			}
+		}
+		
 	}
 
 	.games{
+		margin-top:25px;
 		width:100%;
 		display:inline-block;
 		font-family: 'Roboto', sans-serif;
 		font-size: 12px;
 		ul#itemlist{
+
+			#empty_search{
+				color:white;
+				h1{
+					font-size:18px;
+					text-align:center;
+				}
+			}
+
 			list-style: none;
 			li{
 				#loading-spinner{
@@ -25,12 +72,10 @@
 				}
 
 				.gameinfo{
-					background-color: rgba(94, 16, 76, 0.2);
-					border-radius:4px;
-					border: 1px solid rgba(32, 171, 168, 0.1);
 					margin: 5px;
 					padding:0;
-					color:rgba(255, 255, 255, 0.6);
+					color:white;
+					border-right:1px solid $accent-pink;
 
 					.gameimg{
 						img{
@@ -58,6 +103,7 @@
 
 					&:hover{
 						background-color: rgba(94, 16, 76, 0.3);
+						border-right:4px solid $accent-pink;
 					}
 				}
 			}
@@ -89,31 +135,42 @@
 			display: block;
 			border-radius: 100px;
 			position: relative;
-		}
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			font-size:10px;
+			text-decoration: none;
+			color: white;
+			font-family: 'Montserrat', sans-serif;
+			font-style:oblique;
+			&:hover{
+				color:$accent-pink;
+			}
 
-		label:after {
-			content: '';
-			position: absolute;
-			top:0;
-			left:0;
-			width: 10px;
-			height: 10px;
-			background: #fff;
-			border-radius: 90px;
-			transition: 0.3s;
+			&:after{
+				content: '';
+				position: absolute;
+				top:0;
+				left:0;
+				width: 10px;
+				height: 10px;
+				background: #fff;
+				border-radius: 90px;
+				transition: 0.3s;
+			}
+
+			&:active:after {
+				width: 10px;
+			}
 		}
 
 		input:checked + label {
-			background: #ED1B64;
+			background: $accent-pink;
+			color:$accent-pink;
 		}
 
 		input:checked + label:after {
 			left: calc(100%);
 			transform: translateX(-100%);
-		}
-
-		label:active:after {
-			width: 10px;
 		}
 
 	}
