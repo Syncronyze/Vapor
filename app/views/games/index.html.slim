@@ -5,8 +5,7 @@
 			= submit_tag "Search", :name => nil, :id => "btn_name_search"
 			.border-bottom
 		.games
-			ul#itemlist
-				= render(@games)
+			= render partial: "gamelist"
 	aside.genres.col-sm-2
 		= form_tag('/fetch_items', :id => "genre_list", remote: true) do
 				= collection_check_boxes :genre_search, :genre_ids, Genre.all, :id, :name

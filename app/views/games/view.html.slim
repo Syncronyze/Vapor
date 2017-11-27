@@ -5,3 +5,6 @@ div
 		= @game.description
 		br
 		= @game.price
+
+		= form_tag('/add_to_cart', :id => "form_cart", remote: true) do
+			= submit_tag "Add to Cart", :name => nil, :id => "btn_add_to_cart"

@@ -1,0 +1,5 @@
+ul#itemlist
+	- if @games.present?
+		= render(@games)
+	- else
+		= render partial: "empty"

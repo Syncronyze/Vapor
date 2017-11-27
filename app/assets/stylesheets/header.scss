@@ -5,6 +5,9 @@ $accent-blue: #20ABA8;
 		display: inline-block;
 		float: none;
 		vertical-align: middle;
+		.navbar-toggle{
+			margin-right: 25px;
+		}
 		li{
 			a{
 				text-transform: uppercase;
