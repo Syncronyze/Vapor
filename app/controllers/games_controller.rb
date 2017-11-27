@@ -6,6 +6,7 @@ class GamesController < ApplicationController
 
 	def view
 		@game = Game.find(params[:id])
+		@in_cart = session[:cart].include? params[:id]
 	end
 
 	def search_games
