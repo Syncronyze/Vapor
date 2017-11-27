@@ -5,8 +5,8 @@ class GamesController < ApplicationController
 	end
 
 	def view
+		@in_cart = session[:cart].include?(params[:id])
 		@game = Game.find(params[:id])
-		@in_cart = session[:cart].include? params[:id]
 	end
 
 	def search_games

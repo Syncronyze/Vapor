@@ -6,6 +6,6 @@ div
 		br
 		= @game.price
 
-		= form_tag('/add_to_cart', :id => "form_cart", remote: true) do
-			= hidden_field_tag :in_cart, session[:cart].contains(@game.id) ? 'true' : 'false'
+		= form_tag("/toggle_cart_item/#{params[:id]}", :id => "form_cart", remote: true) do
+			= hidden_field_tag :in_cart, session[:cart].include?(@game.id) ? 'true' : 'false'
 			= submit_tag "Add to Cart", :name => nil, :id => "btn_add_to_cart"
