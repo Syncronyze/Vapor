@@ -7,5 +7,5 @@ div
 		= @game.price
 
 		= form_tag("/toggle_cart_item/#{params[:id]}", :id => "form_cart", remote: true) do
-			= hidden_field_tag :in_cart, session[:cart].include?(@game.id) ? 'true' : 'false'
-			= submit_tag "Add to Cart", :name => nil, :id => "btn_add_to_cart"
+			= button_tag @in_cart ? "Remove from Cart" : "Add to Cart", :id => "btn_add_to_cart", class: 'btn btn-primary', \
+      			data: { disable_with: "Submitting Changes..."}

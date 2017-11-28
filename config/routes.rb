@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   get 'cart' => 'cart#index', as: 'cart'
   post '/add_cart_item/:game' => 'cart#add', as: 'add_item'
   post '/remove_cart_item/:game' => 'cart#remove', as: 'remove_item'
-  post '/toggle_cart_item/:game' => 'cart_#toggle', as: 'toggle_item'
+  post '/toggle_cart_item/:game' => 'cart#toggle', as: 'toggle_item'
 
 end

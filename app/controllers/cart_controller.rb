@@ -6,16 +6,20 @@ class CartController < ApplicationController
 
 	def add
 		session[:cart].push(params[:game])
-		p "adding"
+		games_in_cart
 	end
 
 	def remove
 		session[:cart].delete(params[:game])
-		p "removing"
+		games_in_cart
 	end
 
 	def toggle
 		session[:cart].include?(params[:game]) ? remove : add
+		games_in_cart
+		respond_to do |format|
+			format.js
+		end
 	end
 
 	def games_in_cart
