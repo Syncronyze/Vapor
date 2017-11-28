@@ -5,8 +5,16 @@ class CartController < ApplicationController
 	end
 
 	def add
-		session[:cart].push(params[:game])
+		has_item = session[:cart].include? params[:game]
+		session[:cart].push(params[:game]) unless has_item
 		games_in_cart
+
+		respond_to do |format|
+			format.js{ 
+				flash.now[:success] = "Successfully added." unless has_item
+				flash.now[:danger] = "Item already in cart." unless !has_item
+			}
+		end
 	end
 
 	def remove
@@ -17,9 +25,6 @@ class CartController < ApplicationController
 	def toggle
 		session[:cart].include?(params[:game]) ? remove : add
 		games_in_cart
-		respond_to do |format|
-			format.js
-		end
 	end
 
 	def games_in_cart

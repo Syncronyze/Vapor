@@ -1,11 +1,12 @@
-div
-	h1 = @game.name
-	img src= @game.image
-	p 
-		= @game.description
-		br
-		= @game.price
+.content
+	div
+		h1 = @game.name
+		img src= @game.image
+		p 
+			= @game.description
+			br
+			= @game.price
 
-		= form_tag("/toggle_cart_item/#{params[:id]}", :id => "form_cart", remote: true) do
-			= button_tag @in_cart ? "Remove from Cart" : "Add to Cart", :id => "btn_add_to_cart", class: 'btn btn-primary', \
-      			data: { disable_with: "Submitting Changes..."}
+			= form_tag("/add_cart_item/#{params[:id]}", :id => "form_cart", remote: true) do
+				= button_tag "Add to Cart", :id => "btn_add_to_cart", class: 'btn btn-primary', \
+	      			data: { disable_with: "Adding..."}

@@ -3,4 +3,13 @@ body{
 	background-color:#050104;
 	background-repeat: no-repeat;
     background-attachment: fixed;
+    color:white;
+}
+
+#flash{
+	position: absolute;
+    top: 104px;
+    width: 200px;
+    text-align:center;
+    left:calc(50% - 100px);
 }
