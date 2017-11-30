@@ -30,7 +30,7 @@ class Game < ApplicationRecord
 		end
 
 		if(!searchterm.nil?)
-			games.where('name LIKE ? OR description LIKE ?', "%#{searchterm}%", "%#{searchterm}%").order(:name)
+			games.where('name ILIKE ? OR description ILIKE ?', "%#{searchterm}%", "%#{searchterm}%").order(:name)
 		else
 			games.order(:name)
 		end
