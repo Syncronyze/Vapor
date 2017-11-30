@@ -38,6 +38,7 @@ development:
   encoding: utf8
   database: vapor_development
   pool: 5
+  host: localhost
   username: vapor_postgres_user
   password: 12345
 
@@ -46,6 +47,7 @@ test: &TEST
   encoding: utf8
   database: vapor_test
   pool: 5
+  host: localhost
   username: vapor_postgres_user
   password: 12345
 
@@ -54,5 +56,6 @@ production:
   encoding: utf8
   database: vapor_production
   pool: 5
+  host: localhost
   username: vapor_postgres_user
   password: 12345
