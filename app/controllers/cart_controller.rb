@@ -20,6 +20,13 @@ class CartController < ApplicationController
 	def remove
 		session[:cart].delete(params[:game])
 		games_in_cart
+		has_item = session[:cart].include? params[:game]
+		
+		respond_to do |format|
+			format.js{ 
+				flash.now[:danger] = "Item removed."
+			}
+		end
 	end
 
 	def toggle

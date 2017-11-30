@@ -1,0 +1,5 @@
+#cart
+	- if @cartitems.present? && !@cartitems.empty?
+		= render partial: 'cartitems', collection: @cartitems
+	- else
+		= render partial: "empty"

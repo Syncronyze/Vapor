@@ -5,20 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
- #AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
-# Genre.create!([
-# 	{name: "Action"}, 
-# 	{name: "Adventure"}, 
-# 	{name: "Casual"}, 
-# 	{name: "Indie"}, 
-# 	{name: "Massively Multiplayer"}, 
-# 	{name: "Racing"}, 
-# 	{name: "RPG"},
-# 	{name: "Simulation"}, 
-# 	{name: "Strategy"}, 
-# 	{name: "RPG"}, 
-# 	{name: "Sports"}])
+Genre.create!([
+	{name: "Action"}, 
+	{name: "Adventure"}, 
+	{name: "Casual"}, 
+	{name: "Indie"}, 
+	{name: "Massively Multiplayer"}, 
+	{name: "Racing"}, 
+	{name: "RPG"},
+	{name: "Simulation"}, 
+	{name: "Strategy"}, 
+	{name: "Sports"}])
 
 
 Game.create!([

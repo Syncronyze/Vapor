@@ -1,5 +1,5 @@
-div
+.cartitem
 	= cartitems.name
-	= form_tag("/remove_cart_item/#{cartitems.id}", :id => "form_cart", remote: true, style: 'display:inline-block;') do
+	= form_tag("/remove_cart_item/#{cartitems.id}", remote: true, style: 'display:inline-block;') do
 				= button_tag "X", :id => "btn_remove", class: 'btn btn-danger', \
 	      			data: { disable_with: "..."}

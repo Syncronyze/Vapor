@@ -39,7 +39,7 @@ development:
   database: vapor_development
   pool: 5
   username: vapor_postgres_user
-  password:
+  password: 12345
 
 test: &TEST
   adapter: postgresql
@@ -47,7 +47,7 @@ test: &TEST
   database: vapor_test
   pool: 5
   username: vapor_postgres_user
-  password:
+  password: 12345
 
 production:
   adapter: postgresql
@@ -55,4 +55,4 @@ production:
   database: vapor_production
   pool: 5
   username: vapor_postgres_user
-  password:
+  password: 12345
