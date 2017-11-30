@@ -5,6 +5,7 @@
 		p 
 			= @game.description
 			br
+			| CDN$ 
 			= @game.price
 
 			= form_tag("/add_cart_item/#{params[:id]}", :id => "form_cart", remote: true) do

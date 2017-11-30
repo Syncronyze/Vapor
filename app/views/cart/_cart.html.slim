@@ -1,5 +1,7 @@
 #cart
 	- if @cartitems.present? && !@cartitems.empty?
 		= render partial: 'cartitems', collection: @cartitems
+		| Total: CDN$ 
+		= @cart_total
 	- else
 		= render partial: "empty"

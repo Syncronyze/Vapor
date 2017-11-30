@@ -36,5 +36,6 @@ class CartController < ApplicationController
 
 	def games_in_cart
 		@cartitems = Game.where(id: session[:cart].compact)
+		@cart_total = @cartitems.sum(:price)
 	end
 end
